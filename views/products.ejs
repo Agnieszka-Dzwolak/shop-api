@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <title>Shop</title>
+    </head>
+    <body>
+      <header>
+        <%- include('./includes/nav.ejs', {token: token})%>
+        <h1>Shop</h1>
+      </header>
+      <main>
+        <% products.forEach((product)=>{ %>
+          <div class="product-container">
+            <img class="product-img" src="<%=product.img%>" alt="<%=product.name%>"> 
+            <h2 class="product-name"><%=product.name%></h2>
+            <h2 class="product-price">$<%=product.price%></h2>
+            <p class="product-description"><%=product.description%></p>
+           <button>
+              <a href="/api/products/<%=product.id%>">DETAILS</a>
+            </button>
+
+          </div>
+
+
+          <% })%>
+      </main>
+    </body>
+</html>

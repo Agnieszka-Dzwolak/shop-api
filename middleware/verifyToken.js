@@ -10,12 +10,13 @@ const verifyToken = (req, res, next) => {
     }
     jwt.verify(token, process.env.TOKEN_SECRET, (err, data) => {
         if (err) {
-            return res.status(403).render('404', {
+            res.status(403).render('404', {
                 title: 'Forbidden',
-                message: 'You are forbidden from accessing this page'
+                message: 'You are forbidden to access this page'
             });
+        } else {
+            next();
         }
-        next();
     });
 };
 

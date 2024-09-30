@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <title><%= product.name%>></title>
+    </head>
+    <body>
+        <header>
+            <h1><%= product.name%></h1>
+        </header>
+        <main>
+            <div class="product-container">
+                <img
+                    class="product-img"
+                    src="<%=product.img%>"
+                    alt="<%=product.name%>"
+                />
+                <h2 class="product-name"><%=product.name%></h2>
+                <h2 class="product-price">$<%=product.price%></h2>
+                <p class="product-description"><%=product.description%></p>
+
+                <button>
+                    <a href="/api/products">Back To All</a>
+                </button>
+            </div>
+        </main>
+    </body>
+</html>
